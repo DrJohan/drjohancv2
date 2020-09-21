@@ -1,19 +1,19 @@
 ---
 name: Johan Ibrahim M.D
 position: "Clinical Research Associate | Real World Data Specialist | Statistician"
-address: "Bristol Medical School: Population Health Sciences, University of Bristol"
-phone: 
+address: "Bandar Baru Bangi, Selangor, Malaysia"
+phone: +60126466545
 #www: samabbott.co.uk
+profilepic: 
 email: johan@ms.pmc.edu.my
 twitter: DrJohan81
 github: DrJohan
-linkedin:
-skype:
-aboutme: "Dynamic modeller and data scientist focussing on infectious disease dynamics, epidemiology, and control. I have a strong interest in reproducibility and tool development, having developed multiple widely used packages and dashboards. My work lies at the interface between dynamic modelling, statistical modelling and data science - incorporating elements from software development to enhance robustness and longevity."
+linkedin: Johan Ibrahim
+skype: live:salterharris_1
+aboutme: "A dedicated, highly motivated and enthusiastic medical graduate with in-depth knowledge of research design and methodologies, medical statistic, big data capture, curation, manipulation and visualization and has been certified Good Clinical Practice researcher from National Institute of Health (NIH) Malaysia. I also have an excellent and vast exposure into research since undergraduate from pure clinical to community research setting. I have a vision that the world will become a better place for a living using research as a tool.."
 date: "`r format(Sys.time(), '%B %Y')`"
 headcolor: 009ACD
 output: vitae::awesomecv
-always_allow_html: yes
 header-includes:
   \usepackage{multicol}
   \usepackage{colortbl}
@@ -28,6 +28,54 @@ knitr::opts_chunk$set(echo = FALSE,
                       message = FALSE)
 source("../scripts/install.R")
 ```
+\faIcon{plane} My journey
+============================
+
+```{r edu_plot,fig.align='center', fig.width=6.5, fig.height=3, fig.showtext=TRUE}
+load.fontawesome()
+uni <- fontawesome('fa-university')
+work <- fontawesome('fa-briefcase')
+# teach <- fontawesome('fa-chalkboard')
+
+world <- getMap(resolution = "high")
+world <- world %>% st_as_sf()
+cities <- st_sfc(
+    st_point(c(-79.00453,-2.90055)),
+    st_point(c(-9.13333,38.71667)),
+    st_point(c(7.6261,51.9607)),
+    st_point(c(12.9864,47.8029))
+  ) %>%
+  st_sf(name = c('Cuenca, EC','Lisbon, PT','Münster, DE', 'Salzburg, AT')) %>%
+  st_set_crs(4326) %>%
+  mutate(label = c(paste(work,uni, sep = " "), rep(uni,2), work))
+
+routes <- cities %>%
+  points2line() %>%
+  slice(c(2,7,12)) %>%
+  st_segmentize(units::set_units(100, m))
+
+ggplot(data = world) +
+  geom_sf(color = 'white', lwd = 0.1) +
+  xlab("") + ylab("") +
+  geom_sf_text(
+    data = cities,
+    aes(label = label),
+    size = 3,
+    color = '#009ACD',
+    family = "fontawesome-webfont"
+  ) +
+  geom_sf(
+    data = routes, color = '#009ACD', size = 0.5, alpha = 0.5, linetype = 'dotted'
+  ) +
+  coord_sf(crs = '+proj=robin', xlim = c(-10000000, 4500000), ylim = c(-390000,6100000)) +
+  theme_minimal() +
+  theme(
+    panel.grid = element_line(color = 'transparent'),
+    plot.margin = margin(-1, 0, -1, 0, "cm"),
+    axis.text = element_blank(),
+    axis.title = element_blank()
+  )
+```
 
 ```{r get data, include=FALSE}
 ## Education
@@ -35,19 +83,6 @@ edu <- read_csv(here("data", "education.csv"))
 
 ## Jobs
 jobs <- read_csv(here::here("data", "jobs.csv"))
-
-## Publications - change google id here
-pubs <- scholar::get_publications("GqZm90IAAAAJ") %>% 
-  dplyr::mutate(author = author %>% 
-                  as.character %>% 
-                  stringr::str_trim(),
-                journal = journal %>% 
-                  replace(journal %in% "bioRxiv", "BioRxiv"), 
-                first_author = case_when(stringr::str_starts(author, "S Abbott") ~ TRUE,
-                                         TRUE ~ FALSE),
-                preprint = case_when(journal %in% c("bioRxiv", "BioRxiv") ~ TRUE,
-                                         TRUE ~ FALSE)) %>% 
-  dplyr::arrange(desc(year))
 
 ## Software
 software <- read_csv(here::here("data", "software.csv")) %>% 
@@ -77,10 +112,11 @@ skills <- read_csv(here::here("data", "skills.csv")) %>%
   unique
 
 ## Service
-service <- read_csv(here::here("data", "service.csv"))
+#service <- read_csv(here::here("data", "service.csv"))
 ```
 
-# Education 
+\faIcon{university} Education
+==================================
 ```{r}
 detailed_entries(edu, 
                  when = glue("{start_date}--{end_date}"),
@@ -91,7 +127,8 @@ detailed_entries(edu,
 
 ```
 
-# Experience
+\faIcon{briefcase} Professional Experience
+============================================
 
 ```{r research}
 jobs %>% 
@@ -102,7 +139,11 @@ jobs %>%
     where = where,
     why = details)
 ```
-# Skills
+\faIcon{brain} Skills
+================================
+<!-- \noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}} -->
+
+<!-- \par\noindent\nobreak\vspace{-30pt}\rule{\textwidth}{1pt} -->
 
 ```{r}
 skills %>% 
