@@ -1,0 +1,197 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Awesome CV LaTeX Template for CV/Resume
+%
+% This template has been downloaded from:
+% https://github.com/posquit0/Awesome-CV
+%
+% Author:
+% Claud D. Park <posquit0.bj@gmail.com>
+% http://www.posquit0.com
+%
+%
+% Adapted to be an Rmarkdown template by Mitchell O'Hara-Wild
+% 23 November 2018
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+%
+%-------------------------------------------------------------------------------
+% CONFIGURATIONS
+%-------------------------------------------------------------------------------
+% A4 paper size by default, use 'letterpaper' for US letter
+\documentclass[11pt, a4paper]{awesome-cv}
+
+% Configure page margins with geometry
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+
+% Specify the location of the included fonts
+\fontdir[fonts/]
+
+% Color for highlights
+% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
+%                 awesome-nephritis, awesome-concrete, awesome-darknight
+
+\definecolor{awesome}{HTML}{009ACD}
+
+% Colors for text
+% Uncomment if you would like to specify your own color
+% \definecolor{darktext}{HTML}{414141}
+% \definecolor{text}{HTML}{333333}
+% \definecolor{graytext}{HTML}{5D5D5D}
+% \definecolor{lighttext}{HTML}{999999}
+
+% Set false if you don't want to highlight section with awesome color
+\setbool{acvSectionColorHighlight}{true}
+
+% If you would like to change the social information separator from a pipe (|) to something else
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+\def\endfirstpage{\newpage}
+
+%-------------------------------------------------------------------------------
+%	PERSONAL INFORMATION
+%	Comment any of the lines below if they are not required
+%-------------------------------------------------------------------------------
+% Available options: circle|rectangle,edge/noedge,left/right
+
+\name{Johan Ibrahim M.D}{}
+
+\position{Clinical Research Associate \textbar{} Real World Data Specialist \textbar{} Statistician}
+\address{Bandar Baru Bangi, Selangor, Malaysia}
+
+\mobile{+6012 6466545}
+\email{\href{mailto:johan@ms.pmc.edu.my}{\nolinkurl{johan@ms.pmc.edu.my}}}
+\github{DrJohan}
+\linkedin{Johan Ibrahim}
+\twitter{DrJohan81}
+
+% \gitlab{gitlab-id}
+% \stackoverflow{SO-id}{SO-name}
+% \skype{skype-id}
+% \reddit{reddit-id}
+
+\quote{A dedicated, highly motivated and enthusiastic medical graduate with in-depth knowledge of research design and methodologies, medical statistic, big data capture, curation, manipulation and visualization and has been certified Good Clinical Practice researcher from National Institute of Health (NIH) Malaysia. I also have an excellent and vast exposure into research since undergraduate from pure clinical to community research setting. I have a vision that the world will become a better place for a living using research as a tool..}
+
+\usepackage{booktabs}
+
+% Templates for detailed entries
+% Arguments: what when with where why
+\usepackage{etoolbox}
+\def\detaileditem#1#2#3#4#5{%
+\cventry{#1}{#3}{#4}{#2}{\ifx#5\empty\else{\begin{cvitems}#5\end{cvitems}}\fi}\ifx#5\empty{\vspace{-4.0mm}}\else\fi}
+\def\detailedsection#1{\begin{cventries}#1\end{cventries}}
+
+% Templates for brief entries
+% Arguments: what when with
+\def\briefitem#1#2#3{\cvhonor{}{#1}{#3}{#2}}
+\def\briefsection#1{\begin{cvhonors}#1\end{cvhonors}}
+
+\providecommand{\tightlist}{%
+	\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+%------------------------------------------------------------------------------
+
+
+\usepackage{multicol} \usepackage{colortbl} \arrayrulecolor{white} \usepackage{hhline} \definecolor{light-gray}{gray}{0.95}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+
+\begin{document}
+
+% Print the header with above personal informations
+% Give optional argument to change alignment(C: center, L: left, R: right)
+\makecvheader
+
+% Print the footer with 3 arguments(<left>, <center>, <right>)
+% Leave any of these blank if they are not needed
+% 2019-02-14 Chris Umphlett - add flexibility to the document name in footer, rather than have it be static Curriculum Vitae
+\makecvfooter
+  {September 2020}
+    {Johan Ibrahim M.D~~~·~~~Curriculum Vitae}
+  {\thepage}
+
+
+%-------------------------------------------------------------------------------
+%	CV/RESUME CONTENT
+%	Each section is imported separately, open each file in turn to modify content
+%------------------------------------------------------------------------------
+
+
+
+\hypertarget{my-journey}{%
+\section{\texorpdfstring{\faIcon{plane} My journey}{ My journey}}\label{my-journey}}
+
+\begin{center}\includegraphics{cv_files/figure-latex/edu_plot-1} \end{center}
+
+\hypertarget{education}{%
+\section{\texorpdfstring{\faIcon{university} Education}{ Education}}\label{education}}
+
+\detailedsection{\detaileditem{PhD in Epidemiology}{October 2015--September 2019}{University of Bristol}{Bristol}{\item{Modelling BCG vaccination policy in the UK: What is the effect of changing policy?}\item{Read here: samabbott.co.uk/thesis/}}\detaileditem{Research Placement}{June 2015--September 2015}{University of Glasgow}{Glasgow}{\item{Distinction}\item{The multi-species ecology of antimicrobial resistance in tanzanian human and livestock populations: Using Bayesian methods to infer genetic resistance patterns from phenotypic data.}}\detaileditem{Msc Advanced Mathematical Biology}{2014--2015}{University of York}{York}{\item{Distinction}\item{Group project: Modelling superspreading and seasonality in Influenza, Distinction. An analysis of the resonant effects produced by the introduction of population heterogeneity and seasonal variation to an SIRS model.}}\detaileditem{MMath Mathematics}{2010--2014}{University of Durham}{Durham}{\item{2:1}}}
+
+\hypertarget{professional-experience}{%
+\section{\texorpdfstring{\faIcon{briefcase} Professional Experience}{ Professional Experience}}\label{professional-experience}}
+
+\detailedsection{\detaileditem{Data Scientist}{November 2017--January 2019}{Funding Circle}{London}{\item{Predictive modelling, inference, data visualisation, dashboarding and tool development}}}
+
+\hypertarget{skills}{%
+\section{\texorpdfstring{\faIcon{brain} Skills}{ Skills}}\label{skills}}
+
+\detailedsection{\detaileditem{Dynamic modelling, statistical modelling, data science, reproducible research}{}{Analytical}{}{\empty}\detaileditem{R (advanced), C/C++, Bash, SQL, STAN, JAGS, LIBBI, Python, Matlab}{}{Programming}{}{\empty}\detaileditem{shiny, tidyverse, data.table, Rcpp, pomp, h2o, brms}{}{Packages}{}{\empty}\detaileditem{Git, Docker, Travis, AWS}{}{Tools}{}{\empty}}
+\pagebreak
+
+\hypertarget{training}{%
+\section{Training}\label{training}}
+
+\detailedsection{\detaileditem{Short courses}{2016--2019}{University of Bristol}{Bristol}{\item{Basic Epidemiology, Multilevel Modelling, Data Linkage, Analysis of repeated measures, Bayesian statistics with WINBUGS, Multiple Imputation Methods to deal with Missing Data, Methods for Mediation and Interaction Analysis, and Advanced Survival Analysis and Prognostic Modelling}}\detaileditem{Data science career track}{2017}{DataCamp}{Online}{\item{Covering the full range of data science skills from data cleaning through to predictive modelling and inference.}}\detaileditem{Mathematical Modelling for Infectious Disease Dynamics}{2016}{Wellcome Trust}{Hinxton}{\item{Two week residential course starting with the basics and covering implementation details}}}
+
+\pagebreak
+
+\hypertarget{selected-software}{%
+\section{Selected Software}\label{selected-software}}
+
+\textbf{\texttt{R} Packages}
+
+\detailedsection{\detaileditem{Infectious disease model library and utilities}{2019}{idmodelr}{samabbott.co.uk/idmodelr}{\item{Author and maintainer}\item{Released to CRAN with 1k+ downloads}}\detaileditem{An R package for exploring, visualising and estimating the global zoonotic tuberculosis burden}{2019}{EstZoonoticTB}{samabbott.co.uk/EstZoonoticTB}{\item{Author and maintainer}}\detaileditem{Access and summarise World Health Organisation tuberculosis data}{2018}{getTBinR}{samabbott.co.uk/getTBinR}{\item{Author and maintainer}\item{Released to CRAN with 11k+ downloads}}\detaileditem{An R package that aims to improve your workflow by allowing an easier transition from literate code to a paper draft ready for journal submission}{2017}{prettypublisher}{samabbott.co.uk/prettypublisher}{\item{Author and maintainer}}}
+
+\textbf{Interactive tools}
+
+\detailedsection{\detaileditem{Developed to be used within a modelling short course at the University of Bristol. This dashboard allows the user to simulate and compare a variety of compartmental infectious disease models.}{2019}{Explore infectious disease models}{github.com/seabbs/exploreidmodels}{\empty}\detaileditem{Built into getTBinR this dashboard allows non-R users to explore WHO TB data using all of the package functionality.}{2018}{Explore global tuberculosis}{getTBinR::run\_tb\_dashboard()}{\empty}\detaileditem{Developed to allow simple TB models to be explored in an interactive session. Inspired by practicals from the introduction to TB course, run by TB MAC at the 2017 Union conference.}{2017}{Introduction to Tuberculosis models}{github.com/seabbs/intro\_to\_tb\_models}{\empty}\detaileditem{Developed as a learning aid to help a general audience understand the impact of vaccination on infectious disease dynamics. Used at Green Man 2016 as part of a week of outreach work and subsequently developed further.}{2016}{The pebble game}{github.com/seabbs/thepebblegame}{\empty}}
+
+\emph{See \href{https://github.com/seabbs/}{my GitHub} for a complete overview of my software both released and in development.}
+
+\hypertarget{presentations}{%
+\section{Presentations}\label{presentations}}
+
+\detailedsection{\detaileditem{(My) essential R resources}{2019}{BristolR}{Bristol}{\item{Slides: samabbott.co.uk/talk/myessentialr-bristolr\_19\_04\_20/}}\detaileditem{What do we really know about BCG?}{2019}{UK Clinical Vaccine Network Conference}{Oxford}{\item{Slides:  samabbott.co.uk/talk/uk-vac-network-2019/}}\detaileditem{getTBinR: an R package for accessing and summarising World Health Organization Tuberculosis data}{2019}{R/Medicine}{Boston}{\item{Slides:  samabbott.co.uk/talk/gettbinr-14-09-19/}}\detaileditem{Estimating the effect of the 2005 UK BCG vaccination policy change: A retrospective cohort study using the Enhanced Tuberculosis Surveillance system, 2000-2015}{2018}{Research and Applied Epidemiology Scientific Conference}{Warwick}{\item{Slides: samabbott.co.uk/talk/phe-applied-epi-2018/}}\detaileditem{Beneficial effects of BCG vaccination in outcomes for patients with active TB: observational study using the Enhanced Tuberculosis surveillance system 2000-2014}{2017}{Research and Applied Epidemiology Scientific Conference}{Warwick}{\item{Received best PhD student abstract.}\item{Slides: samabbott.co.uk/talk/phe-applied-epi-2017/}}\detaileditem{Beneficial effects of BCG vaccination in outcomes for patients diagnosed with TB: observational study using the Enhanced Tuberculosis surveillance system 2009-2015}{2017}{48th Union World Conference on Lung Health}{Mexico}{\item{Slides: samabbott.co.uk/talk/union-2017/}}\detaileditem{Assessing the Evidence for Universal Bacillus Calmette-Guèrin (BCG) Vaccination in England}{2016}{Research and Applied Epidemiology Scientific Conference}{Warwick}{\item{Received best abstract from an early career researcher.}\item{Slides: samabbott.co.uk/talk/phe-applied\_epi-2016/}}}
+
+\hypertarget{service}{%
+\section{Service}\label{service}}
+
+\detailedsection{\detaileditem{}{}{Outreach}{}{\item{Blog - with over 2.5k unique hits each year - looking at infectious disease epidemiology and dynamics, developments in `R`, tool development and reproducible research. Link: samabbott.co.uk/post}}\detaileditem{}{}{Organisations}{}{\item{Co-organiser of BristolR}}\detaileditem{}{}{Manuscript Reviews}{}{\item{Journal of Open Source Software (2)}\item{Eurosurveillance (1)}}}
+
+\end{document}

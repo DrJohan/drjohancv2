@@ -2,7 +2,7 @@
 name: Johan Ibrahim M.D
 position: "Clinical Research Associate | Real World Data Specialist | Statistician"
 address: "Bandar Baru Bangi, Selangor, Malaysia"
-phone: +60126466545
+phone: "+6012 6466545"
 #www: samabbott.co.uk
 profilepic: 
 email: johan@ms.pmc.edu.my
@@ -112,7 +112,7 @@ skills <- read_csv(here::here("data", "skills.csv")) %>%
   unique
 
 ## Service
-#service <- read_csv(here::here("data", "service.csv"))
+service <- read_csv(here::here("data", "service.csv"))
 ```
 
 \faIcon{university} Education
@@ -157,58 +157,8 @@ skills %>%
 training %>% 
   detailed_entries(what = what, with = with, when = when, where = where, why = why)
 ```
-# Teaching
 
-```{r}
-teaching %>% 
-  detailed_entries(what = what, when = when, with = with, where = where, why = why)
-```
 
-# Publications
-
-**First author**
-
-```{r}
-pubs %>% 
-  dplyr::filter(first_author, !preprint) %>% 
-  detailed_entries(
-    what = title,
-    when = as.character(year),
-    with = author,
-    where = journal, 
-    .protect = TRUE
-  )
-```
-
-**Non-first author**
-
-```{r}
-pubs %>% 
-  dplyr::filter(!first_author, !preprint) %>% 
-  detailed_entries(
-    what = title,
-    when = as.character(year),
-    with = author,
-    where = journal,
-    .protect = TRUE
-  )
-```
-
-**Preprints**
-
-```{r}
-pubs %>% 
-  dplyr::filter(preprint) %>% 
-  detailed_entries(
-    what = title,
-    when = as.character(year),
-    with = author,
-    where = journal, 
-    .protect = TRUE
-  )
-```
-
-*Updated programmatically each week. See [here](https://scholar.google.com/citations?user=GqZm90IAAAAJ&hl=en) for DOIs and citation details.*
 
 \pagebreak
 

@@ -21,6 +21,7 @@ p_load(fontawesome)
 p_load(kableExtra)
 p_load(huxtable)
 p_load(gridExtra)
+p_load(rworldxtra)
 
 # Get latex ---------------------------------------------------------------
 
