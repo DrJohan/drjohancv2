@@ -9,13 +9,16 @@ email: johan@ms.pmc.edu.my
 twitter: DrJohan81
 github: DrJohan
 linkedin: Johan Ibrahim
-skype: live:salterharris_1
+researchgate: Johan Ibrahim
+skype: Dr Johan Ibrahim
 aboutme: "A dedicated, highly motivated and enthusiastic medical graduate with in-depth knowledge of research design and methodologies, medical statistic, big data capture, curation, manipulation and visualization and has been certified Good Clinical Practice researcher from National Institute of Health (NIH) Malaysia. I also have an excellent and vast exposure into research since undergraduate from pure clinical to community research setting. I have a vision that the world will become a better place for a living using research as a tool.."
 date: "`r format(Sys.time(), '%B %Y')`"
 headcolor: 009ACD
 output: vitae::awesomecv
+always_allow_html: yes
 header-includes:
   \usepackage{multicol}
+  \usepackage{fontawesome}
   \usepackage{colortbl}
   \arrayrulecolor{white}
   \usepackage{hhline}
