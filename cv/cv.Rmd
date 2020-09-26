@@ -144,9 +144,67 @@ jobs %>%
 ```
 \faIcon{brain} Skills
 ================================
+
+\smallskip
+
+\faIcon{cogs} Technical skills
+---------------------------------
 <!-- \noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}} -->
 
 <!-- \par\noindent\nobreak\vspace{-30pt}\rule{\textwidth}{1pt} -->
+
+```{r tech}
+tribble(
+   ~type, ~ software, 
+  "Coding Languages", "R -- SQL -- Python -- JavaScript",
+  "Software", "QGIS -- ArcGIS -- SAGA -- eCognition -- PostgreSQL -- PostGIS -- RStudio --  Earth Engine -- GIMP -- Mendeley",
+  "Other", "Git -- Markdown -- LaTex -- OpenStreetMap"
+) %>% 
+  detailed_entries(what = software, with = type, .protect=FALSE)
+```
+
+\smallskip
+
+\faIcon{calendar} Organizational skills
+------------------------------
+```{r events}
+tribble(
+  ~ event, ~ date, ~ place,
+  "e-Rum 2020 satellite event: \\textit{sfnetworks} Webinar and Hackathon \\href{https://2020.erum.io/program/hackathon/}{\\tiny{\\faIcon{link}}}", "06, 2020", "Online Event",
+  "citizenMorph App Testing Workshop", "09, 2019", "Höfn, IS",
+  "GeoMundus 2018 \\href{http://www.geomundus.org/2018/}{\\tiny{\\faIcon{link}}}", "12, 2018", "Lisbon, PT",
+  "I University Simposium of Environmental Science Research", "06, 2016", "Cuenca, EC",
+  "Vicepresident of the Student Association of Environmental Engineers", "2013 - 2014", "Cuenca, EC",
+) %>% 
+  brief_entries(what = event, when = date, with = place, .protect = F)
+```
+
+\smallskip
+
+\faIcon{language} Languages
+-------------------------------
+
+```{r langforeign, results='markup'}
+data.frame(
+  Skill = c("Reading", "Writing", "Listening","Speaking"),
+  Malay = cell_spec(c(rep("Native", 4)), 'latex', color = '#005c7b'), 
+  English = cell_spec(c("C2","C1","C2","C2"), 'latex', color = '#009acd'), 
+  Indonesia = cell_spec(c("B2","B2","B2","B2"), 'latex', color = '#4cb8dc'), 
+  Javanese = cell_spec(c("B2","B2","B2","B2"), 'latex', color = '#4cb8dc'), 
+) %>%
+  kable(booktabs = T, align = 'c', escape = F, format = "latex") %>%
+  kable_styling(full_width = F, font_size = 9) %>% 
+  footnote(
+    footnote_as_chunk = T,
+    general_title = " ",
+    general = "\\\\tiny Common European Framework of Reference for Languages: A1/A2: Basic User. B1/B2: Independent User. C1/C2: Proficient User",
+    escape = F
+  ) %>%
+  column_spec(column = 1:6, width = '2.4cm') #%>% 
+  # add_header_above(' ', line = F) %>%
+  # row_spec(0:4, extra_latex_after = "\\arrayrulecolor{white}") 
+```
+
 
 ```{r}
 skills %>% 
@@ -162,9 +220,9 @@ training %>%
 ```
 
 
-
 \pagebreak
 
+<!--
 # Selected Software
 
 **`R` Packages**
@@ -196,6 +254,7 @@ presentations %>%
                    why = why,
                    .protect = TRUE)
 ```
+-->
 
 # Service
 
@@ -203,3 +262,35 @@ presentations %>%
 service %>% 
   detailed_entries(with = type, why = details)
 ```
+
+\faIcon{comment} References
+=============================
+
+\footnotesize
+\begin{multicols}{3}
+\begin{center} 
+
+\textbf{Prof. Dr. Edzer Pebesma} \newline
+\faIcon{phone} +49 251 83-33081 \newline
+\faIcon{at} edzer.pebesma@uni-muenster.de \newline
+\faIcon{envelope} Institute for Geoinformatics, \newline
+Heisenbergstraße 2, \newline
+48149 Münster, Germany
+
+\textbf{Prof. Dr. Marco Painho} \newline
+\faIcon{phone} +351 213 871 573 \newline
+\faIcon{at} painho@novaims.unl.pt \newline
+\faIcon{envelope} NOVA Information Management School\newline
+Campus de Campolide\newline
+1070-312 Lisbon, Portugal
+
+\textbf{Mag. Daniel Hölbling} \newline
+\faIcon{phone} +43 (0)662 8044 7581 \newline
+\faIcon{at} daniel.hoelbling@sbg.ac.at \newline
+\faIcon{envelope} Department of Geoinformatics - Z\_GIS \newline
+Schillerstrasse 30 \newline
+5020 Salzburg, Austria
+\end{center} 
+\end{multicols} 
+\normalsize
+-->
