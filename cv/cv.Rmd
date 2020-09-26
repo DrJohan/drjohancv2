@@ -205,11 +205,13 @@ data.frame(
   # row_spec(0:4, extra_latex_after = "\\arrayrulecolor{white}") 
 ```
 
-
+<!--
 ```{r}
 skills %>% 
   detailed_entries(what = skill, with = category)
 ```
+-->
+
 \pagebreak
 
 # Training
