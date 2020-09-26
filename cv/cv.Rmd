@@ -13,7 +13,7 @@ researchgate: Johan Ibrahim
 skype: Dr Johan Ibrahim
 aboutme: "A dedicated, highly motivated and enthusiastic medical graduate with in-depth knowledge of research design and methodologies, medical statistic, big data capture, curation, manipulation and visualization and has been certified Good Clinical Practice researcher from National Institute of Health (NIH) Malaysia. I also have an excellent and vast exposure into research since undergraduate from pure clinical to community research setting. I have a vision that the world will become a better place for a living using research as a tool.."
 date: "`r format(Sys.time(), '%B %Y')`"
-headcolor: 009ACD
+headcolor: 007ba4
 output: vitae::awesomecv
 always_allow_html: yes
 header-includes:
@@ -43,10 +43,15 @@ work <- fontawesome('fa-briefcase')
 world <- getMap(resolution = "high")
 world <- world %>% st_as_sf()
 cities <- st_sfc(
-    st_point(c(-79.00453,-2.90055)),
-    st_point(c(-9.13333,38.71667)),
-    st_point(c(7.6261,51.9607)),
-    st_point(c(12.9864,47.8029))
+    st_point(c(5.377059,100,310436)),
+    st_point(c(1.465211,110.426887)),
+    st_point(c(-7.767951,110.375858)),
+    st_point(c(5.420136,100307040)),
+    st_point(c(53.339124,-6.261970)),
+    st_point(c(-7.768414,110.373442)),
+    st_point(c(3.800674,103.321864)),
+    st_point(c(3.452817,102.451765)),
+    st_point(c(3.134078,101.629905))
   ) %>%
   st_sf(name = c('Cuenca, EC','Lisbon, PT','Münster, DE', 'Salzburg, AT')) %>%
   st_set_crs(4326) %>%
