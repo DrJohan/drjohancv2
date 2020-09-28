@@ -139,6 +139,35 @@ detailed_entries(edu,
 ============================================
 
 ```{r research}
+exp <- rorcid::orcid_employments("0000-0002-1437-5183") %>%
+  purrr::map(., purrr::pluck, "affiliation-group", "summaries") %>% 
+  purrr::flatten_dfr()
+names(exp) <- stringr::str_remove(string = names(exp), pattern = "employment-summary.") 
+
+exp %>%
+  filter(!stringr::str_detect(`role-title`, 'Teaching')) %>% 
+  mutate(description = c(
+    'Researcher for the MORPH, RiCoLa, STEC, citizenMORPH, MontEO projects in the Landslide division of the OBIA group.',
+    'Spatio-temporal data analyst for the project: "Study of Cyclists and Pedestrian Mobility Patterns in Cuenca for a Sustainable Mobility".',
+    'CEDIA project "Geo-statistical Inference of Meteorological Data for Azuay and Chimborazo provinces".',
+    'Project "Water Quality and Environmental Variables Monitoring in Artificial Habitats for Endangered Species in Cuenca".',
+    'Project "Determination of Particulate Matter PM10, PM2.5, and noise in Cuenca canton".',
+    # 'Introduction to Physics and Remote Sensing courses for the Environmental Engineering Career from Universidad de Cuenca.',
+    "Cartographic data gathering organization, topographic correction and categorization of urban land uses, scientific papers analysis for bibliographic review.",
+    "Assess the functioning state of Davis Station sensors, identify similarities and differences of two river basins hydrograms, analyze the effects of temperature and relative humidity on reference evapotranspiration calculation."
+  )) %>%
+  detailed_entries(
+    with = paste(`role-title`, `department-name`, sep = ' - '),
+    when = paste(
+      paste(`start-date.month.value`,`start-date.year.value`, sep = ', '),
+      ifelse(is.na(`end-date.year.value`),"Present",paste(`end-date.month.value`,`end-date.year.value`, sep = ', ')),
+      sep = ' - '
+    ),
+    what = organization.name,
+    where = paste(organization.address.city,organization.address.country, sep =', '),
+    why = description
+    # .protect = FALSE
+  )
 jobs %>% 
   detailed_entries(
     what = role,
